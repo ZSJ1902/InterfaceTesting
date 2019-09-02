@@ -7,23 +7,23 @@
 @Github :    https://crisimple.github.io/
 @Contact :   Crisimple@foxmail.com
 @License :   (C)Copyright 2017-2019, Micro-Circle
-@Desc    :   None
+@Desc    :   requests请求方式
 """
 
 import requests
 
 # 1.requests请求方式
 # (1) GET请求方式
-# httpbin_get = requests.get('http://httpbin.org/get', data={'key': 'value'})
-# print('httpbin_get: ', httpbin_get.text)
+httpbin_get = requests.get('http://httpbin.org/get', data={'key': 'value'})
+print('httpbin_get: ', httpbin_get.text)
 
 # (2) POST请求方式
-# httpbin_post = requests.post('https://httpbin.org/post', data={'key': 'value'})
-# print('httpbin_post: ', httpbin_post.text)
+httpbin_post = requests.post('https://httpbin.org/post', data={'key': 'value'})
+print('httpbin_post: ', httpbin_post.text)
 
 # (3) PUT请求方式
-# httpbin_put = requests.put('https://httpbin.org/put', data={'key': 'value'})
-# print('httpbin_put: ', httpbin_put.text)
+httpbin_put = requests.put('https://httpbin.org/put', data={'key': 'value'})
+print('httpbin_put: ', httpbin_put.text)
 
 # (4) DELETE请求方式
 httpbin_delete = requests.delete('https://httpbin.org/delete', data={'key': 'value'})
