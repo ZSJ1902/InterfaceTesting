@@ -35,6 +35,17 @@ def response_400_code():
 response_400_code()
 
 
+# (3) 重定向接口返回状态码：301
+def response_301_code():
+    interface_url = 'https://butian.360.cn'
+    response_get = requests.get(interface_url)
+    response_get_code = response_get.status_code
+    print('response_get_code: ', response_get_code)
+
+
+response_301_code()
+
+
 # ------------------------------------------------------
 # 2. 响应头
 def response_headers():
@@ -46,5 +57,10 @@ def response_headers():
 
 response_headers()
 
+
+# --------------------------------------------------------------------------------
+# 3. Cookies
+def operator_cookies():
+    url = 'https://httpbin.org/get'
 
 
