@@ -47,20 +47,30 @@ response_301_code()
 
 
 # ------------------------------------------------------
-# 2. 响应头
-def response_headers():
-    interface_headers = 'https://httpbin.org/status/200'
-    response_get = requests.get(interface_headers)
-    response_get_headers = response_get.headers
-    print('response_get_headers: ', response_get_headers)
-
-
-response_headers()
-
-
-# --------------------------------------------------------------------------------
-# 3. Cookies
-def operator_cookies():
+# 2. 响应内容
+def response_contents():
     url = 'https://httpbin.org/get'
 
+    response_get = requests.get(url=url)
+
+    # 响应头
+    print('response_get_headers', response_get.headers)
+
+    # 响应文本
+    print('response_get_text: ', response_get.text)
+
+    # 文本编码方式
+    print('response_get_encoding: ', response_get.encoding)
+
+    # 二进制响应内容
+    print('response_get_content: ', response_get.content)
+
+    # 原始响应内容
+    origin_content = response_get.raw
+    origin_content_read = origin_content.read(10)
+    print('origin_content: ', origin_content)
+    print('origin_content_read: ', origin_content_read)
+
+
+response_contents()
 
