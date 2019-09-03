@@ -19,6 +19,6 @@ from interface_crud.views import add_article, modify_article
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('article/', add_article),
-    path('article<int: art_id>', modify_article)
+    path('articles/', add_article),
+    path('articles<int: art_id>/', modify_article)
 ]
