@@ -18,9 +18,9 @@ class OperateMysql(object):
     def __init__(self):
         # 数据库初始化连接
         self.connect_interface_testing = pymysql.connect(
-            "XXX.XXX.XXX.XXX",
-            "XXX",
-            "XXXXXXXX",
+            "129.28.170.125",
+            "root",
+            "Root@159357",
             "InterfaceTesting",
             cursorclass=pymysql.cursors.DictCursor
         )
@@ -40,9 +40,11 @@ class OperateMysql(object):
 
 if __name__ == "__main__":
     om = OperateMysql()
-    res = om.select_data(
+    select_res = om.select_data(
         """
             SELECT * FROM test_table;
         """
     )
-    print(res)
+    print("select_res: ", select_res)
+
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '你的密码' WITH GRANT OPTION;
