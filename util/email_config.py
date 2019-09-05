@@ -18,9 +18,9 @@ class EmailConfig(object):
     global send_user
     global mail_host
     global password
-    send_user = 'crisimple@163.com'
+    send_user = '********@163.com'
     mail_host = 'smtp.163.com'
-    password = 'wySmtp159357'
+    password = '**********'
 
     def send_config(self, user_lists, subject, content):
         user = "发件人昵称" + "<" + send_user + ">"
