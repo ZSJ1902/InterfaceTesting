@@ -22,7 +22,8 @@ class OperateExcel(object):
         if file_name:
             self.file_name = file_name
         else:
-            self.file_name = '../data/util_data/operate_excel.xls'
+            # self.file_name = '../data/util_data/operate_excel.xls'
+            self.file_name = '../data/TestcasesKeyword.xls'
 
         if sheet_id:
             self.sheet_id = sheet_id
@@ -80,7 +81,7 @@ if __name__ == "__main__":
     print("获取单元格(1, 1)的值：", oe.get_sheet_cell(1, 1))
     print("获取单元格(1, 2)的值：", oe.get_sheet_cell(1, 2))
     print("获取单元格(2, 2)的值：", oe.get_sheet_cell(2, 2))
-    oe.write_to_excel(17, 7, '写入的数据')
+    # oe.write_to_excel(17, 7, '写入的数据')
 
 
 
