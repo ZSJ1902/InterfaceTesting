@@ -20,20 +20,20 @@ class TestInterfaceCrud(unittest.TestCase):
         res = requests.get('http://127.0.0.1:8000/query_article/', params=payload)
         print("test_query_article: ", res.text)
 
-    @unittest.skip("跳过 test_add_article 测试")
+    # @unittest.skip("跳过 test_add_article 测试")
     def test_add_article(self):
         payload = {
             "title": "title5",
             "content": "content5",
         }
-        Headers = {
+        headers = {
             # "Authorization": '通用的token，但是该接口使用的是X-Token',
             "Content-Type": "application/json; charset=utf-8",
             "Accept": "application/json",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400",
             "X-Token": "0a6db4e59c7fff2b2b94a297e2e5632e"
         }
-        res = requests.post('http://127.0.0.1:8000/add_article/', headers=Headers, json=payload)
+        res = requests.post('http://127.0.0.1:8000/add_article/', json=payload, headers=headers)
         print(res.request)
         print(res.text)
 
@@ -43,31 +43,31 @@ class TestInterfaceCrud(unittest.TestCase):
             "title": "title1",
             "content": "content1",
         }
-        Headers = {
+        headers = {
             # "Authorization": '通用的token，但是该接口使用的是X-Token',
             "Content-Type": "application/json; charset=utf-8",
             "Accept": "application/json",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400",
             "X-Token": "0a6db4e59c7fff2b2b94a297e2e5632e"
         }
-        res = requests.post('http://127.0.0.1:8000/modify_article/1', headers=Headers, json=payload)
+        res = requests.post('http://127.0.0.1:8000/modify_article/1', json=payload, headers=headers)
         print(res.request)
         print(res.text)
 
-    # @unittest.skip("跳过 test_delete_article 测试")
+    @unittest.skip("跳过 test_delete_article 测试")
     def test_delete_article(self):
         payload = {
             "title": "title2",
             "content": "content2",
         }
-        Headers = {
+        headers = {
             # "Authorization": '通用的token，但是该接口使用的是X-Token',
             "Content-Type": "application/json; charset=utf-8",
             "Accept": "application/json",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400",
             "X-Token": "0a6db4e59c7fff2b2b94a297e2e5632e"
         }
-        res = requests.delete('http://127.0.0.1:8000/delete_article/2', headers=Headers, json=payload)
+        res = requests.delete('http://127.0.0.1:8000/delete_article/2', json=payload, headers=headers)
         print(res.request)
         print(res.text)
 

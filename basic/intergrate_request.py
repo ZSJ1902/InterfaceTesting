@@ -14,7 +14,7 @@ import requests
 import json
 
 
-class IntergrateRequest():
+class IntergrateRequest(object):
     # 请求 request方法
     def get_req(self, url, data=None, headers=None):
         if headers is not None:
@@ -39,7 +39,7 @@ class IntergrateRequest():
             res = requests.delete(url,  data).json()
         return res
 
-    def main_req(self, method, url, data=None, headers=None):
+    def main_req(self, method, url, data, headers):
         if method == "get":
             res = self.get_req(url, data, headers)
         elif method == 'post':
@@ -53,10 +53,22 @@ class IntergrateRequest():
 
 if __name__ == "__main__":
     ir = IntergrateRequest()
-    method = 'get'
-    url = 'http://127.0.0.1:8000/query_article/'
-    data = None
-    headers = None
-    print(ir.main_req(method, url, data, headers))
+    # get_method = 'get'
+    # get_url = 'http://127.0.0.1:8000/query_article/'
+    # get_data = None
+    # get_header = None
+    # print(ir.main_req(get_method, get_url, get_data, get_header))
 
-
+    post_method = 'post'
+    post_url = 'http://127.0.0.1:8000/add_article/'
+    post_data = {
+        "title": "intergrate_title",
+        "content": "intergrate request"
+    }
+    post_headers = {
+            "Content-Type": "application/json; charset=utf-8",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400",
+            "X-Token": "0a6db4e59c7fff2b2b94a297e2e5632e"
+    }
+    print(ir.main_req(post_method, post_url, post_data, post_headers))

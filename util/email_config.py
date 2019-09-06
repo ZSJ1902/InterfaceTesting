@@ -42,7 +42,7 @@ class EmailConfig(object):
         pass_ratio = "%.2f%%" % (pass_num / count_num * 100)
         fail_ratio = "%.2f%%" % (fail_num / count_num * 100)
 
-        user_lists = ['crisimple@foxmail.com']
+        user_lists = ['********@foxmail.com']
         subject = "【邮件配置测试】"
         content = "一共执行 %f 个用例, 成功 %f 个，通过率为 %s；失败 %f 个，失败率为 %s。" % (count_num, pass_num, pass_ratio, fail_num, fail_ratio)
 
