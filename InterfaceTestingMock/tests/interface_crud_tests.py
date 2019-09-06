@@ -33,6 +33,7 @@ class TestInterfaceCrud(unittest.TestCase):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400",
             "X-Token": "0a6db4e59c7fff2b2b94a297e2e5632e"
         }
+        print(type(headers))
         res = requests.post('http://127.0.0.1:8000/add_article/', json=payload, headers=headers)
         print(res.request)
         print(res.text)
