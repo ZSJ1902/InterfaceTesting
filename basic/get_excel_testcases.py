@@ -34,13 +34,12 @@ class GetExcelTestcases(object):
 
     # 判断该条用例是否执行
     def get_is_run(self, row):
-        flag = None
         col = int(testcases_keyword.get_is_execute())
         is_run = self.oe.get_sheet_cell(row, col)
-        if is_run is not None:
-            flag = True
-        else:
+        if is_run == '':
             flag = False
+        else:
+            flag = True
         return flag
 
     # 获取不同接口的请求方式
@@ -79,7 +78,8 @@ class GetExcelTestcases(object):
 
 if __name__ == "__main__":
     gety = GetExcelTestcases()
-    print(gety.get_cases_num())
-    print(gety.is_header(1))
+    # print(gety.get_cases_num())
+    # print(gety.is_header(2))
+    print(gety.get_is_run(4))
 
 

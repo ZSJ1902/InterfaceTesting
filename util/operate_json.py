@@ -17,7 +17,8 @@ class OperateJson(object):
         if file_name:
             self.file_name = file_name
         else:
-            self.file_name = '../data/util_data/operate_json.json'
+            # self.file_name = '../data/util_data/operate_json.json'
+            self.file_name = "../data/TestcaseHeaders.json"
 
         self.data = self.get_json()
 
@@ -33,10 +34,11 @@ class OperateJson(object):
 
 
 if __name__ == '__main__':
-    oj = OperateJson()
-    print('login: ', oj.get_key_data("login"))
-    print('login.username: ', oj.get_key_data("login")["username"])
-    print('login.password: ', oj.get_key_data("login")["username"])
-    print('logout: ', oj.get_key_data("logout"))
-    print('logout.code: ', oj.get_key_data("logout")["code"])
-    print('logout.info: ', oj.get_key_data("logout")["info"])
+    oj = OperateJson("../data/TestcaseHeaders.json")
+    print(oj.get_json())
+    # print('login: ', oj.get_key_data("login"))
+    # print('login.username: ', oj.get_key_data("login")["username"])
+    # print('login.password: ', oj.get_key_data("login")["username"])
+    # print('logout: ', oj.get_key_data("logout"))
+    # print('logout.code: ', oj.get_key_data("logout")["code"])
+    # print('logout.info: ', oj.get_key_data("logout")["info"])

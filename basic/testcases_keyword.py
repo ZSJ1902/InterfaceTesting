@@ -53,4 +53,5 @@ def get_actual_result():
 
 if __name__ == "__main__":
     print(get_case_id())
+    print(get_header())
 
