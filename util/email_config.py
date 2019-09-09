@@ -46,7 +46,7 @@ class EmailConfig(object):
         fail_ratio = "%.2f%%" % (fail_num / total_cases * 100)
 
         user_lists = ['crisimple@foxmail.com']
-        subject = "【邮件配置测试】"
+        subject = "【接口自动化测试用例执行统计】"
         content = "一共 %f 个用例, 执行了 %f 个用例，未执行 %f 个用例；成功 %f 个，通过率为 %s；失败 %f 个，失败率为 %s" % (total_cases, execute_num, not_execute_num, pass_num, pass_ratio, fail_num, fail_ratio)
 
         self.send_config(user_lists, subject, content)
