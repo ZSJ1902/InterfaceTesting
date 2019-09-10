@@ -17,8 +17,8 @@ import sys
 
 curPath = os.path.abspath(os.path.dirname(__file__))
 print(curPath)
-rootPath = os.path.split(curPath)[0]
-
+rootPath = os.path.abspath(os.path.dirname(curPath))
+print(rootPath)
 
 class OperateExcel(object):
     def __init__(self, file_name=None, sheet_id=None):
@@ -31,7 +31,9 @@ class OperateExcel(object):
         else:
             # self.file_name = '../data/util_data/operate_excel.xls'
             # self.file_name = os.path.join(basedir, "../data/TestcasesKeyword.xls")
-            self.file_name = r"../data/TestcasesKeyword.xls"
+            self.file_name = r"data\TestcasesKeyword.xls"
+            self.file_name = os.path.join(rootPath, self.file_name)
+            print(self.file_name)
             # print("file_name: ", self.file_name)
             # file_path = os.path.abspath(self.file_name)
             # print("file_path: ", file_path)
