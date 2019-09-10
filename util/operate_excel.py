@@ -31,7 +31,7 @@ class OperateExcel(object):
         else:
             # self.file_name = '../data/util_data/operate_excel.xls'
             # self.file_name = os.path.join(basedir, "../data/TestcasesKeyword.xls")
-            self.file_name = r"data\TestcasesKeyword.xls"
+            self.file_name = r"data/TestcasesKeyword.xls"
             self.file_name = os.path.join(rootPath, self.file_name)
             print(self.file_name)
             # print("file_name: ", self.file_name)
