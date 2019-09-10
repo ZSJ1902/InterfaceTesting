@@ -10,6 +10,12 @@
 @Desc    :   操作 JSON 文件中的数据
 """
 import json
+import os
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+print(curPath)
+rootPath = os.path.abspath(os.path.dirname(curPath))
+print(rootPath)
 
 
 class OperateJson(object):
@@ -18,7 +24,8 @@ class OperateJson(object):
             self.file_name = file_name
         else:
             # self.file_name = '../data/util_data/operate_json.json'
-            self.file_name = "../data/TestcaseHeaders.json"
+            self.file_name = "data/TestcaseHeaders.json"
+            self.file_name = os.path.join(rootPath, self.file_name)
 
         self.data = self.get_json()
 
