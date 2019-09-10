@@ -14,8 +14,10 @@ import sys
 import os
 
 curPath = os.path.abspath(os.path.dirname(__file__))
+print(curPath)
 rootPath = os.path.split(curPath)[0]
 sys.path.append(rootPath)
+print('rootPath: ', rootPath)
 
 from basic.get_excel_testcases import GetExcelTestcases
 from basic.intergrate_request import IntergrateRequest

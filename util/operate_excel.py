@@ -12,6 +12,13 @@
 import xlrd
 from xlutils.copy import copy
 
+import os
+import sys
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+print(curPath)
+rootPath = os.path.split(curPath)[0]
+
 
 class OperateExcel(object):
     def __init__(self, file_name=None, sheet_id=None):
@@ -23,7 +30,11 @@ class OperateExcel(object):
             self.file_name = file_name
         else:
             # self.file_name = '../data/util_data/operate_excel.xls'
-            self.file_name = '../data/TestcasesKeyword.xls'
+            # self.file_name = os.path.join(basedir, "../data/TestcasesKeyword.xls")
+            self.file_name = r"../data/TestcasesKeyword.xls"
+            # print("file_name: ", self.file_name)
+            # file_path = os.path.abspath(self.file_name)
+            # print("file_path: ", file_path)
 
         if sheet_id:
             self.sheet_id = sheet_id
