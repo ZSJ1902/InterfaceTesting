@@ -24,8 +24,9 @@ class OperateJson(object):
             self.file_name = file_name
         else:
             # self.file_name = '../data/util_data/operate_json.json'
-            self.file_name = "data/TestcaseHeaders.json"
+            self.file_name = r"data/TestcaseHeaders.json"
             self.file_name = os.path.join(rootPath, self.file_name)
+            print("self.file_name: ", self.file_name)
 
         self.data = self.get_json()
 
