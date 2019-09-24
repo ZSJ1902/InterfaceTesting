@@ -74,8 +74,10 @@ class RunExcelTestcases(object):
                 no_execute_lists.append(case)
         print("没有执行的测试用例有, 按序号有：", no_execute_lists)
         self.ec.send_mail(pass_lists, fail_lists, no_execute_lists)
+        print("....邮件已发送成功...")
 
 
 if __name__ == "__main__":
     rts = RunExcelTestcases()
     rts.run_testcases()
+    print("...程序已执行完毕...")

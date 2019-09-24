@@ -22,7 +22,7 @@ class BaiduTranslate(object):
         self.q = word
         self.fromLang = 'en'
         self.toLang = 'zh'
-        self.baidu_translate = 'https://api.fanyi.baidu.com'
+        self.baidu_translate = 'https://api.fanyi.baidu.com/'
         self.translate_api_url = '/api/trans/vip/translate'
 
         # 百度开发者配置信息
@@ -38,7 +38,7 @@ class BaiduTranslate(object):
         self.my_url = self.translate_api_url + '?appid=' + self.appid + '&q=' + urllib.request.quote(self.q) + '&from=' + self.fromLang + '&to=' + self.toLang + '&salt=' + str(self.salt) + '&sign=' + self.sign
 
     def en_translate_zh(self):
-        re = requests.request('post', self.baidu_translate + self.translate_api_url)
+        re = requests.request("post", self.baidu_translate + self.my_url)
         print('\n\t re.text', re.text)
         re_json = json.loads(re.text)
         print('\n\t re_json', re_json)
